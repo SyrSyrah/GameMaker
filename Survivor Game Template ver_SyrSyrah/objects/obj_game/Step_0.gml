@@ -76,3 +76,4 @@ if (!global.paused)
 		spawn_enemy();	
 	}
 }
+

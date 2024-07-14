@@ -104,3 +104,54 @@ spawn_enemy = function()
 	// Create an enemy at that generated positon.
 	instance_create_layer(_x, _y, "Instances", _enemy);
 }
+
+var year = 2019;
+var month = 5;
+var day = 20;
+var hour = 20;
+var minute = 20;
+var second = 20;
+
+
+// start time
+var start_time = date_create_datetime(year,month,day,hour,minute,second);
+  
+// current time
+var new_time = date_create_datetime(year,month,day,hour,minute,second);
+
+// how many seconds have passed with the above code this will obviously be 0
+seconds = date_second_span(start_time,new_time);
+
+// how many minutes have passed also 0
+var minutes = date_minute_span(start_time,new_time);
+// how many hours have passed also 0
+var hours = date_hour_span(start_time, new_time);
+
+
+// 86,400 seconds is 24 hours
+var draw_time = 0+seconds;
+ 
+//convert to hours
+var hours_remain = (draw_time/60)/60;
+
+//there are 1440 minutes in 24 hours which is what this is returning
+var minutes_remain = draw_time/60;
+
+var secs = draw_time%60;
+ 
+
+
+var draw_hr = floor(hours_remain);
+var draw_min = floor(minutes_remain);
+var draw_secs = floor(secs);
+
+var seconds_string = string(draw_secs);
+if string_length(seconds_string) != 2{
+ seconds_string = "0"+seconds_string;
+}
+
+
+
+time_left = string(draw_hr) + ":" + string(draw_min) + ":" + seconds_string;
+//this is a 1 second alarm
+alarm[0] = 60;

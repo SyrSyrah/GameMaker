@@ -48,3 +48,6 @@ draw_set_valign(fa_middle);
 // Draw our current level.
 draw_text(1450, 65, "LV: " + string(global.level));
 
+draw_set_font(fnt_medium);
+
+draw_text(1650, 75, time_left);
